@@ -1,19 +1,140 @@
 <!DOCTYPE html>
-<html lang="en">
-<meta charset="UTF-8">
-<title>Page Title</title>
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<link rel="stylesheet" href="">
-<style>
-</style>
-<script src=""></script>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Moje Portfolio | Bootstrap Edition</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&display=swap" rel="stylesheet">
+    
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0f172a;
+            color: #f8fafc;
+        }
+        .navbar {
+            background-color: rgba(15, 23, 42, 0.95);
+            backdrop-filter: blur(10px);
+        }
+        .hero-section {
+            padding: 100px 0;
+            min-height: 80vh;
+            display: flex;
+            align-items: center;
+        }
+        .card {
+            background-color: #1e293b;
+            border: 1px solid rgba(255,255,255,0.1);
+            color: white;
+            transition: transform 0.3s ease;
+        }
+        .card:hover {
+            transform: translateY(-10px);
+            border-color: #38bdf8;
+        }
+        .text-accent {
+            color: #38bdf8;
+        }
+        .btn-primary {
+            background-color: #38bdf8;
+            border: none;
+            color: #0f172a;
+            font-weight: bold;
+        }
+        .btn-primary:hover {
+            background-color: #7dd3fc;
+        }
+        footer {
+            background-color: #020617;
+            padding: 40px 0;
+        }
+    </style>
+</head>
 <body>
 
-<img src="img_la.jpg" alt="LA" style="width:100%">
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="#">PORTFOLIO</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#projekty">Projekty</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#dovednosti">Dovednosti</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#kontakt">Kontakt</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
 
-<div class="">
- <h1>hello world</h1>
-</div>
+    <header class="hero-section text-center text-md-start">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-7">
+                    <h1 class="display-3 fw-bold mb-3">Ahoj, já jsem <span class="text-accent">Jméno</span></h1>
+                    <p class="lead mb-4">Tvořím moderní webové aplikace a digitální zážitky. Miluji čistý kód a funkční design.</p>
+                    <a href="#projekty" class="btn btn-primary btn-lg px-4 me-md-2">Moje práce</a>
+                </div>
+                <div class="col-md-5 d-none d-md-block">
+                    <div class="p-5 text-center">
+                        <img src="https://via.placeholder.com/300" class="img-fluid rounded-circle shadow" alt="Profil">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
 
+    <section id="projekty" class="py-5">
+        <div class="container">
+            <h2 class="text-center mb-5 fw-bold">Vybrané projekty</h2>
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-4">
+                    <div class="card h-100 p-3">
+                        <div class="card-body">
+                            <h5 class="card-title fw-bold text-accent">E-shop Aplikace</h5>
+                            <p class="card-text opacity-75">Kompletní řešení pro online prodej postavené na Reactu a Node.js.</p>
+                            <a href="#" class="text-decoration-none text-accent">Prohlédnout na GitHubu →</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="card h-100 p-3">
+                        <div class="card-body">
+                            <h5 class="card-title fw-bold text-accent">Task Manager</h5>
+                            <p class="card-text opacity-75">Jednoduchý nástroj pro správu úkolů s využitím lokálního úložiště prohlížeče.</p>
+                            <a href="#" class="text-decoration-none text-accent">Prohlédnout na GitHubu →</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="card h-100 p-3">
+                        <div class="card-body">
+                            <h5 class="card-title fw-bold text-accent">Weather App</h5>
+                            <p class="card-text opacity-75">Aplikace pro předpověď počasí využívající OpenWeather API.</p>
+                            <a href="#" class="text-decoration-none text-accent">Prohlédnout na GitHubu →</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer id="kontakt" class="text-center">
+        <div class="container">
+            <h2 class="fw-bold mb-4 text-accent">Pojďme spolupracovat</h2>
+            <p class="mb-4">Máte nápad na projekt? Napište mi!</p>
+            <div class="d-flex justify-content-center gap-3">
+                <a href="#" class="text-white text-decoration-none border border-secondary px-3 py-2 rounded">GitHub</a>
+                <a href="#" class="text-white text-decoration-none border border-secondary px-3 py-2 rounded">LinkedIn</a>
+                <a href="mailto:vas@email.cz" class="text-white text-decoration-none border border-secondary px-3 py-2 rounded">Email</a>
+            </div>
+            <p class="mt-5 opacity-50 small">&copy; 2026 Jméno Příjmení</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
