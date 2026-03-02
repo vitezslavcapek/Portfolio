@@ -3,52 +3,109 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Moje Portfolio | Bootstrap Edition</title>
+    <title>Portfolio | Hardware & Design</title>
     
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&display=swap" rel="stylesheet">
     
     <style>
+        :root {
+            --bg-dark: #050505;
+            --bg-card: #120d1d;
+            --accent-purple: #a855f7; 
+            --deep-purple: #6b21a8;  
+            --text-gray: #94a3b8;
+        }
+
         body {
             font-family: 'Inter', sans-serif;
-            background-color: #0f172a;
-            color: #f8fafc;
+            background-color: var(--bg-dark);
+            color: #ffffff;
+            scroll-behavior: smooth;
         }
+
+        /* Skleněný efekt pro Navbar */
         .navbar {
-            background-color: rgba(15, 23, 42, 0.95);
-            backdrop-filter: blur(10px);
+            background-color: rgba(5, 5, 5, 0.8);
+            backdrop-filter: blur(15px);
+            border-bottom: 1px solid rgba(168, 85, 247, 0.2);
         }
+
         .hero-section {
-            padding: 100px 0;
+            padding: 120px 0;
             min-height: 80vh;
-            display: flex;
-            align-items: center;
+            background: radial-gradient(circle at 10% 20%, rgba(168, 85, 247, 0.1) 0%, transparent 40%);
         }
+
+        /* Karty s fialovým nádechem */
         .card {
-            background-color: #1e293b;
-            border: 1px solid rgba(255,255,255,0.1);
+            background-color: var(--bg-card);
+            border: 1px solid rgba(168, 85, 247, 0.15);
             color: white;
-            transition: transform 0.3s ease;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
         }
+
         .card:hover {
             transform: translateY(-10px);
-            border-color: #38bdf8;
+            border-color: var(--accent-purple);
+            box-shadow: 0 10px 30px rgba(168, 85, 247, 0.2);
         }
+
         .text-accent {
-            color: #38bdf8;
+            color: var(--accent-purple);
+            text-shadow: 0 0 10px rgba(168, 85, 247, 0.3);
         }
+
         .btn-primary {
-            background-color: #38bdf8;
+            background-color: var(--accent-purple);
             border: none;
-            color: #0f172a;
+            color: white;
             font-weight: bold;
+            box-shadow: 0 4px 15px rgba(168, 85, 247, 0.4);
         }
+
         .btn-primary:hover {
-            background-color: #7dd3fc;
+            background-color: var(--deep-purple);
+            transform: scale(1.05);
         }
+
+        .btn-outline-light:hover {
+            color: var(--bg-dark);
+            background-color: var(--accent-purple);
+            border-color: var(--accent-purple);
+        }
+
+        .skill-badge {
+            background: rgba(168, 85, 247, 0.15);
+            color: var(--accent-purple);
+            border: 1px solid rgba(168, 85, 247, 0.3);
+            padding: 6px 18px;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            margin: 5px;
+        }
+
+        .section-title {
+            position: relative;
+            display: inline-block;
+            margin-bottom: 40px;
+        }
+
+        .section-title::after {
+            content: "";
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 50px;
+            height: 3px;
+            background: var(--accent-purple);
+        }
+
         footer {
-            background-color: #020617;
-            padding: 40px 0;
+            background-color: #020202;
+            border-top: 1px solid rgba(168, 85, 247, 0.1);
+            padding: 60px 0;
         }
     </style>
 </head>
@@ -56,65 +113,103 @@
 
     <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
         <div class="container">
-            <a class="navbar-brand fw-bold" href="#">PORTFOLIO</a>
+            <a class="navbar-brand fw-bold" href="#"><span class="text-accent">MÉ</span>PORTFOLIO</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="#projekty">Projekty</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#dovednosti">Dovednosti</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#sluzby">Zaměření</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#projekty">Ukázky</a></li>
                     <li class="nav-item"><a class="nav-link" href="#kontakt">Kontakt</a></li>
                 </ul>
             </div>
         </div>
     </nav>
 
-    <header class="hero-section text-center text-md-start">
-        <div class="container">
+    <header class="hero-section d-flex align-items-center">
+        <div class="container text-center text-md-start">
             <div class="row align-items-center">
                 <div class="col-md-7">
-                    <h1 class="display-3 fw-bold mb-3">Ahoj, já jsem <span class="text-accent">Jméno</span></h1>
-                    <p class="lead mb-4">Tvořím moderní webové aplikace a digitální zážitky. Miluji čistý kód a funkční design.</p>
-                    <a href="#projekty" class="btn btn-primary btn-lg px-4 me-md-2">Moje práce</a>
-                </div>
-                <div class="col-md-5 d-none d-md-block">
-                    <div class="p-5 text-center">
-                        <img src="https://via.placeholder.com/300" class="img-fluid rounded-circle shadow" alt="Profil">
+                    <h1 class="display-2 fw-bold mb-3">Hardware & <br><span class="text-accent">Digital Design</span></h1>
+                    <p class="lead mb-4 opacity-75">Stavba výkonných počítačů, precizní grafika a tvorba moderních webových rozhraní.</p>
+                    <div class="mb-5">
+                        <span class="skill-badge">PC Builder</span>
+                        <span class="skill-badge">Graphic Design</span>
+                        <span class="skill-badge">Web Basics</span>
                     </div>
+                    <a href="#projekty" class="btn btn-primary btn-lg px-5 py-3">Prohlédnout práci</a>
+                </div>
+                <div class="col-md-5 d-none d-md-block text-center">
+                    <img src="https://via.placeholder.com/400x400/120d1d/a855f7?text=TECH+ART" class="img-fluid rounded-circle border border-secondary p-2 shadow-lg" alt="Hardware art">
                 </div>
             </div>
         </div>
     </header>
 
-    <section id="projekty" class="py-5">
-        <div class="container">
-            <h2 class="text-center mb-5 fw-bold">Vybrané projekty</h2>
-            <div class="row g-4">
+    <section id="sluzby" class="py-5">
+        <div class="container text-center">
+            <h2 class="section-title fw-bold">Moje specializace</h2>
+            <div class="row g-4 mt-2 text-start">
+                <div class="col-md-4">
+                    <div class="card h-100 p-4">
+                        <div class="mb-3 text-accent fs-3">🖥️</div>
+                        <h3 class="h5 fw-bold">Stavba počítačů</h3>
+                        <p class="small opacity-75">Profesionální skládání herních sestav a workstationů. Od výběru komponent po finální tuning systému.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card h-100 p-4">
+                        <div class="mb-3 text-accent fs-3">🎨</div>
+                        <h3 class="h5 fw-bold">Grafický design</h3>
+                        <p class="small opacity-75">Vizuální identita, loga a grafika pro sociální sítě, která vystoupí z davu.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card h-100 p-4">
+                        <div class="mb-3 text-accent fs-3">🌐</div>
+                        <h3 class="h5 fw-bold">Tvorba webů</h3>
+                        <p class="small opacity-75">Realizace přehledných webových stránek s důrazem na moderní vzhled a rychlost.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="projekty" class="py-5 bg-black bg-opacity-25">
+        <div class="container text-center">
+            <h2 class="section-title fw-bold">Poslední projekty</h2>
+            <div class="row g-4 mt-2">
                 <div class="col-md-6 col-lg-4">
-                    <div class="card h-100 p-3">
-                        <div class="card-body">
-                            <h5 class="card-title fw-bold text-accent">E-shop Aplikace</h5>
-                            <p class="card-text opacity-75">Kompletní řešení pro online prodej postavené na Reactu a Node.js.</p>
-                            <a href="#" class="text-decoration-none text-accent">Prohlédnout na GitHubu →</a>
+                    <div class="card overflow-hidden">
+                        <div style="height: 180px; background: #1a1a1a; display: flex; align-items: center; justify-content: center;">
+                             <span class="text-accent opacity-50">Image PC Build</span>
+                        </div>
+                        <div class="card-body text-start">
+                            <h5 class="fw-bold">Watercooled Rig</h5>
+                            <p class="small opacity-50">Stavba s custom okruhem.</p>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-4">
-                    <div class="card h-100 p-3">
-                        <div class="card-body">
-                            <h5 class="card-title fw-bold text-accent">Task Manager</h5>
-                            <p class="card-text opacity-75">Jednoduchý nástroj pro správu úkolů s využitím lokálního úložiště prohlížeče.</p>
-                            <a href="#" class="text-decoration-none text-accent">Prohlédnout na GitHubu →</a>
+                    <div class="card overflow-hidden">
+                        <div style="height: 180px; background: #1a1a1a; display: flex; align-items: center; justify-content: center;">
+                            <span class="text-accent opacity-50">Image Logo Design</span>
+                        </div>
+                        <div class="card-body text-start">
+                            <h5 class="fw-bold">Vizuál pro klienta</h5>
+                            <p class="small opacity-50">Logo a barevná paleta.</p>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-4">
-                    <div class="card h-100 p-3">
-                        <div class="card-body">
-                            <h5 class="card-title fw-bold text-accent">Weather App</h5>
-                            <p class="card-text opacity-75">Aplikace pro předpověď počasí využívající OpenWeather API.</p>
-                            <a href="#" class="text-decoration-none text-accent">Prohlédnout na GitHubu →</a>
+                    <div class="card overflow-hidden">
+                        <div style="height: 180px; background: #1a1a1a; display: flex; align-items: center; justify-content: center;">
+                            <span class="text-accent opacity-50">Image Web Project</span>
+                        </div>
+                        <div class="card-body text-start">
+                            <h5 class="fw-bold">Portfolio Web</h5>
+                            <p class="small opacity-50">HTML/CSS/JS.</p>
                         </div>
                     </div>
                 </div>
@@ -124,14 +219,13 @@
 
     <footer id="kontakt" class="text-center">
         <div class="container">
-            <h2 class="fw-bold mb-4 text-accent">Pojďme spolupracovat</h2>
-            <p class="mb-4">Máte nápad na projekt? Napište mi!</p>
+            <h2 class="fw-bold mb-4">Máš <span class="text-accent">nápad?</span></h2>
+            <p class="mb-5 opacity-75">Napiš mi a vymyslíme nejlepší řešení pro tvůj setup nebo brand.</p>
             <div class="d-flex justify-content-center gap-3">
-                <a href="#" class="text-white text-decoration-none border border-secondary px-3 py-2 rounded">GitHub</a>
-                <a href="#" class="text-white text-decoration-none border border-secondary px-3 py-2 rounded">LinkedIn</a>
-                <a href="mailto:vas@email.cz" class="text-white text-decoration-none border border-secondary px-3 py-2 rounded">Email</a>
+                <a href="#" class="btn btn-outline-light px-4">Instagram</a>
+                <a href="mailto:vas@email.cz" class="btn btn-primary px-4">Kontaktuj mě</a>
             </div>
-            <p class="mt-5 opacity-50 small">&copy; 2026 Jméno Příjmení</p>
+            <p class="mt-5 opacity-25 small">&copy; 2026 | Navrženo ve fialové</p>
         </div>
     </footer>
 
