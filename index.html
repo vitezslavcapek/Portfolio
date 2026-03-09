@@ -7,6 +7,7 @@
     
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css" />
     
     <style>
         :root {
@@ -104,12 +105,19 @@
             align-items: center; 
             justify-content: center;
             overflow: hidden;
+            position: relative;
         }
 
         .project-img-container img {
             width: 100%;
             height: 100%;
             object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        /* Kurzor lupy pro lightbox obrázky */
+        .glightbox {
+            cursor: zoom-in;
         }
 
         footer {
@@ -164,9 +172,11 @@
                 
                 <div class="col-md-6 col-lg-4">
                     <div class="card overflow-hidden">
-                        <div class="project-img-container">
-                            <img src="gamingpc.jpg" class="img-fluid" alt="Herní PC sestava">
-                        </div>
+                        <a href="gamingpc.jpg" class="glightbox">
+                            <div class="project-img-container">
+                                <img src="gamingpc.jpg" class="img-fluid" alt="Herní PC sestava">
+                            </div>
+                        </a>
                         <div class="card-body text-start">
                             <h5 class="fw-bold">Sestava PC</h5>
                             <p class="small opacity-50">Stavba herního PC na míru.</p>
@@ -176,9 +186,11 @@
 
                 <div class="col-md-6 col-lg-4">
                     <div class="card overflow-hidden">
-                        <div class="project-img-container">
-                            <img src="gamenight.png" class="img-fluid" alt="Game Night Design">
-                        </div>
+                        <a href="gamenight.png" class="glightbox">
+                            <div class="project-img-container">
+                                <img src="gamenight.png" class="img-fluid" alt="Game Night Design">
+                            </div>
+                        </a>
                         <div class="card-body text-start">
                             <h5 class="fw-bold">Vizuál pro klienta</h5>
                             <p class="small opacity-50">Loga a plakáty</p>
@@ -190,8 +202,10 @@
                     <a href="https://vitezslavcapek.endora.site/ctvrletni_prace.html" target="_blank" class="project-link">
                         <div class="card overflow-hidden">
                             <div class="project-img-container">
-                                <span class="text-accent fw-bold">OTEVŘÍT WEB ↗</span>
-                                <img src="galaxyfitness.png">
+                                <img src="galaxyfitness.png" class="img-fluid" alt="Galaxy Fitness Web">
+                                <div style="position:absolute; background: rgba(0,0,0,0.4); width:100%; height:100%; display:flex; align-items:center; justify-content:center;">
+                                     <span class="text-white fw-bold">OTEVŘÍT WEB ↗</span>
+                                </div>
                             </div>
                             <div class="card-body text-start">
                                 <h5 class="fw-bold">Čtvrtletní práce</h5>
@@ -218,5 +232,12 @@
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
+    <script>
+        // Inicializace Lightboxu
+        const lightbox = GLightbox({
+            selector: '.glightbox'
+        });
+    </script>
 </body>
 </html>
