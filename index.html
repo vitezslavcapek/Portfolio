@@ -24,7 +24,6 @@
             scroll-behavior: smooth;
         }
 
-        /* Skleněný efekt pro Navbar */
         .navbar {
             background-color: rgba(5, 5, 5, 0.8);
             backdrop-filter: blur(15px);
@@ -37,7 +36,6 @@
             background: radial-gradient(circle at 10% 20%, rgba(168, 85, 247, 0.1) 0%, transparent 40%);
         }
 
-        /* Karty s fialovým nádechem */
         .card {
             background-color: var(--bg-card);
             border: 1px solid rgba(168, 85, 247, 0.15);
@@ -62,17 +60,6 @@
             color: white;
             font-weight: bold;
             box-shadow: 0 4px 15px rgba(168, 85, 247, 0.4);
-        }
-
-        .btn-primary:hover {
-            background-color: var(--deep-purple);
-            transform: scale(1.05);
-        }
-
-        .btn-outline-light:hover {
-            color: var(--bg-dark);
-            background-color: var(--accent-purple);
-            border-color: var(--accent-purple);
         }
 
         .skill-badge {
@@ -162,41 +149,13 @@
         </div>
     </header>
 
-    <section id="sluzby" class="py-5">
-        <div class="container text-center">
-            <h2 class="section-title fw-bold">Moje specializace</h2>
-            <div class="row g-4 mt-2 text-start">
-                <div class="col-md-4">
-                    <div class="card h-100 p-4">
-                        <div class="mb-3 text-accent fs-3">🖥️</div>
-                        <h3 class="h5 fw-bold">Stavba počítačů</h3>
-                        <p class="small opacity-75">Profesionální skládání herních sestav a pracovišť. Od výběru komponent po finální tuning systému.</p>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="card h-100 p-4">
-                        <div class="mb-3 text-accent fs-3">🎨</div>
-                        <h3 class="h5 fw-bold">Grafický design</h3>
-                        <p class="small opacity-75">Vizuální identita, loga a grafika pro sociální sítě.</p>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="card h-100 p-4">
-                        <div class="mb-3 text-accent fs-3">🌐</div>
-                        <h3 class="h5 fw-bold">Tvorba webů</h3>
-                        <p class="small opacity-75">Realizace přehledných webových stránek s moderním vzhledem a rychlostí.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
     <section id="projekty" class="py-5 bg-black bg-opacity-25">
         <div class="container text-center">
             <h2 class="section-title fw-bold">Poslední projekty</h2>
             <div class="row g-4 mt-2">
+                
                 <div class="col-md-6 col-lg-4">
-                    <div class="card overflow-hidden">
+                    <div class="card h-100 overflow-hidden">
                         <div class="project-img-container">
                             <img src="gamingpc.jpg" class="img-fluid" alt="Herní PC sestava">
                         </div>
@@ -206,19 +165,21 @@
                         </div>
                     </div>
                 </div>
+
                 <div class="col-md-6 col-lg-4">
-                    <div class="card overflow-hidden">
+                    <div class="card h-100 overflow-hidden">
                         <div class="project-img-container">
+                            <img src="gamenight.png" class="img-fluid" alt="Game Night Design">
                         </div>
                         <div class="card-body text-start">
                             <h5 class="fw-bold">Vizuál pro klienta</h5>
                             <p class="small opacity-50">Loga a plakáty</p>
-                            <img src="gamenight.png">
                         </div>
                     </div>
                 </div>
+
                 <div class="col-md-6 col-lg-4">
-                    <div class="card overflow-hidden">
+                    <div class="card h-100 overflow-hidden">
                         <div class="project-img-container">
                             <span class="text-accent opacity-50">Web Project</span>
                         </div>
@@ -228,6 +189,7 @@
                         </div>
                     </div>
                 </div>
+
             </div>
         </div>
     </section>
