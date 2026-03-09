@@ -49,6 +49,16 @@
             box-shadow: 0 10px 30px rgba(168, 85, 247, 0.2);
         }
 
+        /* Styl pro odkaz na kartě, aby text zůstal bílý */
+        .card-link {
+            text-decoration: none;
+            color: inherit;
+            display: block;
+        }
+        .card-link:hover {
+            color: inherit;
+        }
+
         .text-accent {
             color: var(--accent-purple);
             text-shadow: 0 0 10px rgba(168, 85, 247, 0.3);
@@ -143,7 +153,7 @@
                     <a href="#projekty" class="btn btn-primary btn-lg px-5 py-3">Prohlédnout práci</a>
                 </div>
                 <div class="col-md-5 d-none d-md-block text-center">
-                    <img src="1000000101.jpg" class="img-fluid rounded-circle border border-secondary p-2 shadow-lg" alt="Profilová fotka">
+                    <img src="1000000101.JPG" class="img-fluid rounded-circle border border-secondary p-2 shadow-lg" alt="Profilová fotka">
                 </div>
             </div>
         </div>
@@ -169,7 +179,7 @@
                 <div class="col-md-6 col-lg-4">
                     <div class="card h-100 overflow-hidden">
                         <div class="project-img-container">
-                            <img src="gamenight.png">
+                            <img src="gamenight.png" class="img-fluid" alt="Game Night Design">
                         </div>
                         <div class="card-body text-start">
                             <h5 class="fw-bold">Vizuál pro klienta</h5>
@@ -179,15 +189,17 @@
                 </div>
 
                 <div class="col-md-6 col-lg-4">
-                    <div class="card h-100 overflow-hidden">
-                        <div class="project-img-container">
-                            <span class="text-accent opacity-50">Web Project</span>
+                    <a href="https://vitezslavcapek.endora.site/ctvrletni_prace.html" target="_blank" class="card-link">
+                        <div class="card h-100 overflow-hidden">
+                            <div class="project-img-container">
+                                <span class="text-accent opacity-50">Zobrazit web ↗</span>
+                            </div>
+                            <div class="card-body text-start">
+                                <h5 class="fw-bold">Čtvrtletní práce</h5>
+                                <p class="small opacity-50">HTML/CSS/JS projekt na Endora.site</p>
+                            </div>
                         </div>
-                        <div class="card-body text-start">
-                            <h5 class="fw-bold">Web</h5>
-                            <p class="small opacity-50">HTML/CSS/JS</p>
-                        </div>
-                    </div>
+                    </a>
                 </div>
 
             </div>
